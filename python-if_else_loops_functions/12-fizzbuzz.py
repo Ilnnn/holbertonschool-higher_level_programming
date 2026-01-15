@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-def fizzbuzz(n):
+def fizzbuzz():
 
     for n in range (101):
         if n % 3 == 0 and n % 5 == 0:
