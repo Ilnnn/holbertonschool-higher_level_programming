@@ -6,7 +6,7 @@ def safe_print_list_integers(my_list=[], x=0):
         try:
             try: 
                 print("{:d}".format(my_list[i]), end="")
-                fnlcountdwn =+ 1
+                fnlcountdwn += 1
             except (ValueError, TypeError):
                 pass            
         except IndexError:
