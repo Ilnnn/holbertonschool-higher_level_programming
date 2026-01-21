@@ -6,8 +6,8 @@ def square_matrix_simple(matrix=[]):
     for row in matrix:
         new_row = []
 
-        for value in row:
-            new_row.append(value * value)
+        for num in row:
+            new_row.append(num * num)
 
             new_matrix.append(new_row)
 
