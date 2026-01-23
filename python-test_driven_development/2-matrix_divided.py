@@ -20,17 +20,17 @@ def matrix_divided(matrix, div):
             "matrix must be a matrix (list of lists) of integer/floats"
         )
 
-        row_lenghts = None
+    row_lenghts = None
 
     for row in matrix:
-        if not isinstance (row, list) or row = []:
+        if not isinstance (row, list) or row == []:
             raise TypeError(
                 "matrix must be a matrix (list of lists) of integer/floats"
                 )
         if row_lenghts is None:
             row_lenghts = len(row)
-            elif len(row) != row_lenghts:
-                raise TypeError("Each row of the matrix must have the same size")
+        elif len(row) != row_lenghts:
+            raise TypeError("Each row of the matrix must have the same size")
 
         for element in row:
             if not isinstance(element, (int, float)):
@@ -43,10 +43,10 @@ def matrix_divided(matrix, div):
     if div == 0:
         raise ZeroDivisionError("division by zero")
 
-    new_matrix = []
+    new_matrix == []
 
     for row in matrix:
-        new_row = []
+        new_row == []
         for element in row:
             new_row.append(round(element / div, 2))
         new_matrix.append(new_row)
