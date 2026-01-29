@@ -5,6 +5,7 @@
 class Rectangle:
     """Represents a rectangle."""
     number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """Initializes a Rectangle instance."""
@@ -53,7 +54,7 @@ class Rectangle:
     def __str__(self):
         if self.__width == 0 or self.__height == 0:
             return ""
-        return '\n'.join(["#" * self.__width] * self.__height)
+        return '\n'.join([str(self.print_symbol) * self.__width] * self.__height)
 
     def __repr__(self):
         """Return a string to recreate a new instance with eval()."""
