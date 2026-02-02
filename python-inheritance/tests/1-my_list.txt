@@ -1,0 +1,91 @@
+
+========================
+Test complet pour MyList
+========================
+
+MyList = __import__('1-my_list').MyList
+
+def test_basic():
+    """Test de base de l'énoncé"""
+    my_list = MyList()
+    my_list.append(1)
+    my_list.append(4)
+    my_list.append(2)
+    my_list.append(3)
+    my_list.append(5)
+    print(my_list)
+    my_list.print_sorted()
+    print(my_list)
+
+def test_empty():
+    """Liste vide"""
+    my_list = MyList()
+    print("Empty:", my_list)
+    my_list.print_sorted()
+    print("Still empty:", my_list)
+
+def test_single():
+    """Un seul élément"""
+    my_list = MyList([42])
+    print("Single:", my_list)
+    my_list.print_sorted()
+    print("Unchanged:", my_list)
+
+def test_negative():
+    """Nombres négatifs"""
+    my_list = MyList([-5, 3, -1, 0, 2])
+    print("Negative:", my_list)
+    my_list.print_sorted()
+    print("Unchanged:", my_list)
+
+def test_duplicates():
+    """Doublons"""
+    my_list = MyList([3, 1, 3, 2, 1])
+    print("Duplicates:", my_list)
+    my_list.print_sorted()
+    print("Unchanged:", my_list)
+
+def test_instantiation():
+    """Tests d'instanciation"""
+    print("=== Instantiation ===")
+    my_list = MyList()
+    print("Empty list:", my_list)
+    
+    my_list = MyList([1, 2, 3])
+    print("From list:", my_list)
+    
+    # Edge: None (doit lever TypeError)
+    try:
+        MyList(None)
+    except TypeError as e:
+        print("NoneType error:", str(e)[:50] + "...")
+
+def test_list_unchanged():
+    """Vérifie que la liste originale n'est PAS modifiée"""
+    original = [5, 1, 4, 2, 3]
+    my_list = MyList(original)
+    print("Before sort:", my_list)
+    my_list.print_sorted()
+    print("After sort (unchanged!):", my_list)
+    assert my_list == original, "List modified!"
+
+if __name__ == "__main__":
+    print("=== TEST BASIC (énoncé) ===")
+    test_basic()
+    
+    print("\n=== EMPTY LIST ===")
+    test_empty()
+    
+    print("\n=== SINGLE ELEMENT ===")
+    test_single()
+    
+    print("\n=== NEGATIFS ===")
+    test_negative()
+    
+    print("\n=== DUPLICATES ===")
+    test_duplicates()
+    
+    print("\n=== INSTANTIATION ===")
+    test_instantiation()
+    
+    print("\n=== ALL TESTS PASSED")
