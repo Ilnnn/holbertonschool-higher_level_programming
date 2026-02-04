@@ -4,11 +4,12 @@ This module defines a Rectangle class that inherits from BaseGeometry,
 validates width and height, computes area, and provides a string representation.
 """
 
+BaseGeometry = __import__('7-base_geometry').BaseGeometry 
 
 class Rectangle(BaseGeometry):
     """Rectangle that inherits from BaseGeometry."""
 
-    def __init__(self, withd, height):
+    def __init__(self, width, height):
         """Initialize rectangle with validated width and height.
 
         Args:
