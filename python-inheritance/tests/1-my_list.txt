@@ -1,4 +1,3 @@
-
 ========================
 Test complet pour MyList
 ========================
@@ -16,6 +15,7 @@ def test_basic():
     print(my_list)
     my_list.print_sorted()
     print(my_list)
+    print()
 
 def test_empty():
     """Liste vide"""
@@ -23,6 +23,7 @@ def test_empty():
     print("Empty:", my_list)
     my_list.print_sorted()
     print("Still empty:", my_list)
+    print()
 
 def test_single():
     """Un seul élément"""
@@ -30,6 +31,7 @@ def test_single():
     print("Single:", my_list)
     my_list.print_sorted()
     print("Unchanged:", my_list)
+    print()
 
 def test_negative():
     """Nombres négatifs"""
@@ -37,6 +39,7 @@ def test_negative():
     print("Negative:", my_list)
     my_list.print_sorted()
     print("Unchanged:", my_list)
+    print()
 
 def test_duplicates():
     """Doublons"""
@@ -44,6 +47,7 @@ def test_duplicates():
     print("Duplicates:", my_list)
     my_list.print_sorted()
     print("Unchanged:", my_list)
+    print()
 
 def test_instantiation():
     """Tests d'instanciation"""
@@ -59,6 +63,7 @@ def test_instantiation():
         MyList(None)
     except TypeError as e:
         print("NoneType error:", str(e)[:50] + "...")
+    print()
 
 def test_list_unchanged():
     """Vérifie que la liste originale n'est PAS modifiée"""
@@ -68,24 +73,28 @@ def test_list_unchanged():
     my_list.print_sorted()
     print("After sort (unchanged!):", my_list)
     assert my_list == original, "List modified!"
+    print()
 
 if __name__ == "__main__":
     print("=== TEST BASIC (énoncé) ===")
     test_basic()
     
-    print("\n=== EMPTY LIST ===")
+    print("=== EMPTY LIST ===")
     test_empty()
     
-    print("\n=== SINGLE ELEMENT ===")
+    print("=== SINGLE ELEMENT ===")
     test_single()
     
-    print("\n=== NEGATIFS ===")
+    print("=== NEGATIFS ===")
     test_negative()
     
-    print("\n=== DUPLICATES ===")
+    print("=== DUPLICATES ===")
     test_duplicates()
     
-    print("\n=== INSTANTIATION ===")
+    print("=== INSTANTIATION ===")
     test_instantiation()
     
-    print("\n=== ALL TESTS PASSED")
+    print("=== LIST UNCHANGED ===")
+    test_list_unchanged()
+    
+    print("=== ALL TESTS PASSED ===")
