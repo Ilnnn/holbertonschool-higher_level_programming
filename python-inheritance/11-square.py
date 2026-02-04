@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 class Square(Rectangle):
     """Square that inherits from Rectangle."""
 

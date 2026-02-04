@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 class Rectangle(BaseGeometry):
     """Rectangle that inherits from BaseGeometry."""
 
