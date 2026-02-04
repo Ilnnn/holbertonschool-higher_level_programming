@@ -1,4 +1,11 @@
 #!/usr/bin/python3
+"""
+This module defines a Square class that inherits from Rectangle,
+validates size, and computes the area of the square.
+"""
+
+BaseGeometry = __import__('7-base_geometry').BaseGeometry 
+
 class Square(Rectangle):
     """Square that inherits from Rectangle."""
 
