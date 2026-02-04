@@ -1,9 +1,19 @@
 #!/usr/bin/python3
+"""
+This module defines a Square class that inherits from Rectangle,
+validates size, computes area, and provides a string representation.
+"""
+
+
 class Square(Rectangle):
     """Square that inherits from Rectangle."""
 
     def __init__(self, size):
-        """Initialize square with validated size."""
+        """Initialize square with validated size.
+
+        Args:
+            size (int): The size of the square's sides.
+        """
         self.integer_validator("size", size)
         self.__size = size
         super().__init__(size, size)
