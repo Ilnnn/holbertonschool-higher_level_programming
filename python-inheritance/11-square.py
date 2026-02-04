@@ -4,6 +4,8 @@ This module defines a Square class that inherits from Rectangle,
 validates size, computes area, and provides a string representation.
 """
 
+Rectangle = __import__('9-rectangle').Rectangle
+
 
 class Square(Rectangle):
     """Square that inherits from Rectangle."""
