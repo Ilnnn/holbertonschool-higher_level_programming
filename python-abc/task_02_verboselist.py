@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 class VerboseList(list):
     """A list that prints messages when modified."""
 

@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 class CountedIterator:
     """Iterator that counts how many items have been fetched."""
 

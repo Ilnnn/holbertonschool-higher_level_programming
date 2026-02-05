@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 class Mermaid(SwimMixin):
     def swim(self):
         print(f"The creature swims!")
