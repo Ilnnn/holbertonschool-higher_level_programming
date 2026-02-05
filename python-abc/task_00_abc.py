@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Abstract Base Class Animal"""
+
 from abc import ABC, abstractmethod
 
 class Animal(ABC):
@@ -10,12 +11,16 @@ class Animal(ABC):
         """Return the sound made by the animal."""
         pass
 
-    class Dog(Animal):
-        """Dog class inheriting from Animal."""
-        def sound(self):
-            return "Bark"
+class Dog(Animal):
+    """Dog class inheriting from Animal."""
     
-    class Cat(Animal):
+def sound(self):
+    """Return the dog's sound."""
+    return "Bark"
+    
+class Cat(Animal):
         """Cat class inheriting from Animal."""
-        def sound(self):
-            return "Meow"
+
+def sound(self):
+    """Return the cat's sound."""
+    return "Meow"
