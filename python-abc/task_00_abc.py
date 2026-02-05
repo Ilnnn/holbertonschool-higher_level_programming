@@ -3,6 +3,7 @@
 
 from abc import ABC, abstractmethod
 
+
 class Animal(ABC):
     """Abstract base class for animals."""
 
@@ -11,15 +12,19 @@ class Animal(ABC):
         """Return the sound made by the animal."""
         pass
 
+
 class Dog(Animal):
     """Dog class inheriting from Animal."""
-    
+
+
 def sound(self):
     """Return the dog's sound."""
     return "Bark"
-    
+
+
 class Cat(Animal):
-        """Cat class inheriting from Animal."""
+    """Cat class inheriting from Animal."""
+
 
 def sound(self):
     """Return the cat's sound."""
