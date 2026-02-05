@@ -16,16 +16,14 @@ class Animal(ABC):
 class Dog(Animal):
     """Dog class inheriting from Animal."""
 
-
-def sound(self):
-    """Return the dog's sound."""
-    return "Bark"
+    def sound(self):
+        """Return the dog's sound."""
+        return "Bark"
 
 
 class Cat(Animal):
     """Cat class inheriting from Animal."""
 
-
-def sound(self):
-    """Return the cat's sound."""
-    return "Meow"
+    def sound(self):
+        """Return the cat's sound."""
+        return "Meow"
