@@ -1,25 +1,18 @@
 #!/usr/bin/python3
 
 class SwimMixin:
+    """Mixin for swimming behavior."""
     def swim(self):
-        print("Swimming...")
+        print("The creature swims")
 
 
 class FlyMixin:
-    def fly(self):
-        print("Flying...")
-
-
-class Mermaid(SwimMixin):
-    def swim(self):
-        print("The creature swims!")
-
-
-class Bird(FlyMixin):
+    """Mixin for flying behavior."""
     def fly(self):
         print("The creature flies!")
 
 
-class SuperCreature(SwimMixin, FlyMixin):
+class Dragon(SwimMixin, FlyMixin):
+    """Dragon can swim and fly."""
     def roar(self):
-        print("The dragon roars!")
+        print("The creature roars!")
