@@ -25,3 +25,8 @@ class CustomObject:
                 obj = pickle.load(file)
 
                 if isinstance(obj, cls):
+                    return obj
+                return None
+
+        except (OSError, pickle.PickleError, EOFError):
+            return None
