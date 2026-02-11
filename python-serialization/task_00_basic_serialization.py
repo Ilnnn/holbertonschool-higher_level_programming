@@ -12,9 +12,10 @@ def serialize_and_save_to_file(data, filename):
     with open(filename, "w", encoding="utf-8") as file:
         json.dump(data, file)
 
+
 def load_and_deserialize(filename):
     """
-    Charge des données JSON depuis un fichier et les reconvertit en dictionnaire Python.
+    Charging files JSON from file and convert in Python.
 
     Args:
         filename (str): Le nom du fichier JSON à lire.
