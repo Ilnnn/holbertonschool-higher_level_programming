@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-import json
+"""Create an object from a JSON file."""
 
 
 def load_from_json_file(filename):
-    """Create an object from a JSON file."""
+    """Return the Python object represented in a JSON file."""
     with open(filename, "r", encoding="utf-8") as f:
-        return json.load(f)
+        return __import__("json").load(f)
