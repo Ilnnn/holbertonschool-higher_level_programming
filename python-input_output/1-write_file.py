@@ -1,5 +1,8 @@
 #!/usr/bin/python3
-def write_file(filename=""):
-    """Read a UTF-8 text file and print its content to stdout."""
-    with open(filename, "r", encoding="utf-8") as f:
-        print(f.read(), end="")
+"""Write string to UTF8 file."""
+
+
+def write_file(filename="", text=""):
+    """Write text to a file and return number of characters written."""
+    with open(filename, "w", encoding="utf-8") as f:
+        returnf.write(text)
