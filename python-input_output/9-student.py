@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Defines a Student class with a to_json method."""
 
 
 class Student:
