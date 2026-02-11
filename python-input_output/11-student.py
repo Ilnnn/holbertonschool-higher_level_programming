@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""Student class with to_json and reload_from_json"""
+
 
 class Student:
     """Class that defines a student."""
@@ -17,9 +19,7 @@ class Student:
         """
 
         if isinstance(attrs, list) and all(isinstance(a, str) for a in attrs):
-
             return {a: getattr(self, a) for a in attrs if hasattr(self, a)}
-
         return self.__dict__.copy()
 
         def reload_from_jason(self, json):
