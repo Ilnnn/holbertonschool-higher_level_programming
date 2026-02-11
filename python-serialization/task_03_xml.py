@@ -3,7 +3,7 @@ import xml.etree.ElementTree as ET
 
 
 def serialize_to_xml(dictionary, filename):
-    """Serialize a dictionary to an XML file."""
+    """Serialize a Python dictionary into XML and save it to a file."""
     root = ET.Element("data")
 
     for key, value in dictionary.items():
@@ -15,7 +15,7 @@ def serialize_to_xml(dictionary, filename):
 
 
 def deserialize_from_xml(filename):
-    """Deserialize an XML file back into a dictionary."""
+    """Read XML file and return the deserialized Python dictionary."""
     result = {}
 
     try:
@@ -35,7 +35,10 @@ def deserialize_from_xml(filename):
                 try:
                     value = int(text)
                 except ValueError:
-                    value = text
+                    try:
+                        value = float(text)
+                    except ValueError:
+                        value = text
 
             result[child.tag] = value
 
