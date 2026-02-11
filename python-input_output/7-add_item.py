@@ -1,8 +1,18 @@
 #!/usr/bin/python3
-"""Create an object from a JSON file."""
+"""Add all command line arg to Python list and save to JSON file."""
 
+import sys
 
-def load_from_json_file(filename):
-    """Return the Python object represented in a JSON file."""
-    with open(filename, "r", encoding="utf-8") as f:
-        return __import__("json").load(f)
+save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
+
+filename = "add_item.json"
+
+try:
+    items = load_from_json_file(filename)
+except FileNotFoundError:
+    items = []
+
+items.extend(sys.argv[1:])
+
+save_to_json_file(items, filename)
