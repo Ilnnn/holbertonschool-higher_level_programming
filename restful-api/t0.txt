@@ -1,0 +1,100 @@
+asics of HTTP/HTTPS
+
+Differences Between HTTP and HTTPS
+
+HTTP (HyperText Transfer Protocol) is the standard protocol used for communication between web clients and servers. It allows browsers to send requests and receive responses.
+
+However, HTTP transmits data in plain text. This means that anyone intercepting the communication can read or modify the data.
+
+HTTPS (HyperText Transfer Protocol Secure) is the secure version of HTTP. It uses SSL/TLS encryption to protect the data exchanged between the client and the server.
+
+Main differences:
+
+HTTP is not encrypted.
+
+HTTPS encrypts data using SSL/TLS.
+
+HTTP uses port 80.
+
+HTTPS uses port 443.
+
+HTTPS requires a digital certificate.
+
+HTTPS ensures confidentiality, integrity, and authentication.
+
+Structure of an HTTP Request
+
+An HTTP request has three main parts:
+
+Request Line
+Format: METHOD PATH HTTP_VERSION
+Example:
+GET /index.html HTTP/1.1
+
+Headers
+Provide additional information about the request.
+Examples:
+Host: example.com
+User-Agent: Mozilla/5.0
+Accept: text/html
+
+Body (optional)
+Contains data sent to the server (used with POST or PUT).
+Example: JSON data when submitting a form.
+
+Structure of an HTTP Response
+
+An HTTP response also has three parts:
+
+Status Line
+Format: HTTP_VERSION STATUS_CODE STATUS_MESSAGE
+Example:
+HTTP/1.1 200 OK
+
+Response Headers
+Examples:
+Content-Type: text/html
+Content-Length: 1200
+
+Body
+Contains the returned content (HTML, JSON, image, etc.).
+
+Common HTTP Methods
+
+GET
+Description: Retrieves data from the server.
+Use case: Loading a web page or fetching API data.
+
+POST
+Description: Sends data to create a resource.
+Use case: Submitting a registration form.
+
+PUT
+Description: Updates or replaces a resource.
+Use case: Editing user profile information.
+
+DELETE
+Description: Removes a resource.
+Use case: Deleting an account.
+
+Common HTTP Status Codes
+
+200 OK
+Description: The request was successful.
+Scenario: Page loads correctly.
+
+301 Moved Permanently
+Description: Resource has moved permanently.
+Scenario: Redirect from HTTP to HTTPS.
+
+400 Bad Request
+Description: Invalid request from client.
+Scenario: Malformed JSON sent to API.
+
+404 Not Found
+Description: Resource does not exist.
+Scenario: Page not found.
+
+500 Internal Server Error
+Description: Server encountered an error.
+Scenario: Backend application crash.
