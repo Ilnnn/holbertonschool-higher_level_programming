@@ -18,6 +18,7 @@ users = {
     "alice": {"name": "Alice", "age": 32, "city": "New York"}
 }
 
+@app.route("/")
 def home():
     """Root endpoint"""
     return "Welcome to the flask API"
@@ -48,8 +49,8 @@ def add_user():
             return jsonify({"error": "Username already exists"}), 409
 
         users[username] = {
-            "name": data.get("name")
-            "age": data.get("age")
+            "name": data.get("name"),
+            "age": data.get("age"),
             "city": data.get("city")
         }
 
