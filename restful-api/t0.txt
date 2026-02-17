@@ -98,3 +98,24 @@ Scenario: Page not found.
 500 Internal Server Error
 Description: Server encountered an error.
 Scenario: Backend application crash.
+
+
+HTTP REQUEST
+┌──────────────────────────────────────┐
+│ Request Line                        │
+│--------------------------------------│
+│ METHOD  SP  PATH  SP  HTTP/VERSION  │
+│ Example: GET /index.html HTTP/1.1   │
+├──────────────────────────────────────┤
+│ Headers                              │
+│--------------------------------------│
+│ Host: example.com                   │
+│ User-Agent: Mozilla/5.0             │
+│ Content-Type: application/json      │
+├──────────────────────────────────────┤
+│ (Empty Line)                         │
+├──────────────────────────────────────┤
+│ Message Body (Optional)              │
+│--------------------------------------│
+│ { "key": "value" }                  │
+└──────────────────────────────────────┘
