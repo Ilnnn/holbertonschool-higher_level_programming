@@ -14,6 +14,7 @@ import json
 HOST = "0.0.0.0"
 PORT = 8000
 
+
 class SimpleAPIHandler(BaseHTTPRequestHandler):
     """Request handler for our simple API."""
 
@@ -45,6 +46,7 @@ class SimpleAPIHandler(BaseHTTPRequestHandler):
             self._send_headers(404, "application/json")
             self.wfile.write(json.dumps(data).encode("utf-8"))
 
+
 def run_server():
     """Start the HTTP server."""
     server_address = (HOST, PORT)
@@ -55,5 +57,7 @@ def run_server():
     except KeyboardInterrupt:
         print("\nServer stopped by user")
         httpd.server_close()
+
+
 if __name__ == "__main__":
     run_server()
