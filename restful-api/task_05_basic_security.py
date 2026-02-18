@@ -36,7 +36,10 @@ users = {
 
 @auth.verify_password
 def verify_pass(username, password):
-    if username in users and check_password_hash(users[username]["password"], password):
+    if (
+        username in users and
+        check_password_hash(users[username]["password"], password)
+    ):
         return username
     return None
 
@@ -62,7 +65,12 @@ def login():
     if not user or not check_password_hash(user["password"], password):
         return jsonify({"error": "Invalid credentials"}), 401
 
-    access_token = create_access_token(identity={"username": username, "role": user["role"]})
+    access_token = create_access_token(
+        identity={
+            "username": username,
+            "role": user["role"]
+        }
+    )
     return jsonify({"access_token": access_token}), 200
 
 
@@ -70,7 +78,11 @@ def login():
 @jwt_required()
 def jwt_protected():
     identity = get_jwt_identity()
-    return jsonify({"message": f"JWT Auth: Access Granted for {identity['username']}"})
+    return jsonify({
+        "message": (
+            f"JWT Auth: Access Granted for {identity['username']}"
+        )
+    })
 
 
 @app.route("/admin-only")
