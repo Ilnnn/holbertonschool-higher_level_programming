@@ -1,10 +1,12 @@
 #!/usr/bin/python3
 """
 Simple API using Python's http.server module.
+
 Endpoints:
 - /         → Welcome message
 - /data     → Returns sample JSON data
 - /status   → Returns API status
+- /info     → Returns API info
 Other endpoints → 404 Not Found
 """
 
@@ -16,17 +18,16 @@ PORT = 8000
 
 
 class SimpleAPIHandler(BaseHTTPRequestHandler):
-    """Request handler for our simple API."""
+    """Request handler for the simple API."""
 
     def _send_headers(self, status_code=200, content_type="text/plain"):
-        """Helper to send HTTP headers."""
+        """Helper function to send HTTP headers."""
         self.send_response(status_code)
         self.send_header("Content-type", content_type)
         self.end_headers()
 
     def do_GET(self):
-        """Handle GET requests."""
-
+        """Handle GET requests for different endpoints."""
         if self.path == "/":
             self._send_headers(200, "text/plain")
             self.wfile.write(b"Hello, this is a simple API!")
@@ -38,6 +39,12 @@ class SimpleAPIHandler(BaseHTTPRequestHandler):
 
         elif self.path == "/status":
             data = {"status": "OK"}
+            self._send_headers(200, "application/json")
+            self.wfile.write(json.dumps(data).encode("utf-8"))
+
+        elif self.path == "/info":
+            data = {"version": "1.0",
+                    "description": "A simple API built with http.server"}
             self._send_headers(200, "application/json")
             self.wfile.write(json.dumps(data).encode("utf-8"))
 
