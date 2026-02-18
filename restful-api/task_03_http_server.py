@@ -47,8 +47,8 @@ class SimpleAPIHandler(BaseHTTPRequestHandler):
 
 def run_server():
     """Start the HTTP server."""
-    server_adress = (HOST, PORT)
-    httpd = HTTPServer(server_adress, SimpleAPIHandler)
+    server_address = (HOST, PORT)
+    httpd = HTTPServer(server_address, SimpleAPIHandler)
     print(f"Server running on http://{HOST}:{PORT}")
     try:
         httpd.serve_forever()
