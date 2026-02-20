@@ -80,9 +80,9 @@ def jwt_protected():
     identity = get_jwt_identity()
     return jsonify({
         "message": (
-            f"JWT Auth: Access Granted for {identity['username']}"
+            f"JWT Auth: Access Granted"
         )
-    })
+    }),200
 
 
 @app.route("/admin-only")
@@ -91,7 +91,7 @@ def admin_only():
     identity = get_jwt_identity()
     if identity["role"] != "admin":
         return jsonify({"error": "Admin access required"}), 403
-    return jsonify({"message": "Admin Access: Granted"})
+    return jsonify({"message": "Admin Access: Granted"}), 200
 
 
 @jwt.unauthorized_loader
