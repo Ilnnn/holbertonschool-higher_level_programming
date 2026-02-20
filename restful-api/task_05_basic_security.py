@@ -43,11 +43,15 @@ def verify_pass(username, password):
         return username
     return None
 
+@auth.error_handler
+def basic_auth_error(status):
+    return jsonify({"error": "Unauthorized access"}), 401
+
 
 @app.route("/basic-protected")
 @auth.login_required
 def basic_protected():
-    return jsonify({"error": "Basic Auth: Access Granted"})
+    return "Basic Auth: Access Granted", 200
 
 
 @app.route("/login", methods=["POST"])
@@ -66,8 +70,8 @@ def login():
         return jsonify({"error": "Invalid credentials"}), 401
 
     access_token = create_access_token(
-    identity=username,
-    additional_claims={"role": user["role"]}
+        identity=username,
+        additional_claims={"role": user["role"]}
 )
     return jsonify({"access_token": access_token}), 200
 
@@ -76,9 +80,7 @@ def login():
 @jwt_required()
 def jwt_protected():
     current_user = get_jwt_identity()
-    return jsonify({
-        "error": "JWT Auth: Access Granted"
-    }),200
+    return "JWT Auth: Access Granted",200
 
 
 @app.route("/admin-only")
@@ -87,7 +89,7 @@ def admin_only():
     claims = get_jwt()
     if claims.get("role") != "admin":
         return jsonify({"error": "Admin access required"}), 403
-    return jsonify({"error": "Admin Access: Granted"}), 200
+    return "Admin Access: Granted", 200
 
 
 @jwt.unauthorized_loader
