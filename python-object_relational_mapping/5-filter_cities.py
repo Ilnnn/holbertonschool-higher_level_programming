@@ -21,11 +21,11 @@ if __name__ == "__main__":
         db=sys.argv[3]
     )
 
+     # The 4th argument is the name of the state to filter by
+    state_name = sys.argv[4]
+    
     # Creating a cursor object to execute SQL queries
     cursor = db.cursor()
-
-    # The 4th argument is the name of the state to filter by
-    state_name = sys.argv[4]
 
     # SQL query using JOIN and a placeholder for security against injections
     query = """SELECT cities.name
@@ -45,3 +45,4 @@ if __name__ == "__main__":
     # Closing the cursor and the database connection
     cursor.close()
     db.close()
+
