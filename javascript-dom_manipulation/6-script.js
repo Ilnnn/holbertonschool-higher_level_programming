@@ -1,0 +1,11 @@
+const url = 'https://swapi-api.hbtn.io/api/people/5/?format=json';
+
+fetch(url)
+    .then(response => 
+{
+    return response.json();
+})
+.then(data => {
+    const characterElement = document.querySelector('#character');
+    characterElement.textContent = data.name;
+});
