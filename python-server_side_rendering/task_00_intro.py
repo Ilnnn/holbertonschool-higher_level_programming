@@ -1,16 +1,16 @@
-import os 
+import os
 
-def generate_invitations(template, attendees);
+def generate_invitations(template, attendees):
     if not isinstance(template, str):
-        print(f"Erreur : Type invalide pour la template. Attendu : str, reçu : {type(template).__name__}.")
+        print(f"Error: Invalid type for template. Expected: str, received: {type(template).__name__}.")
         return
 
-    if not isinstance(attendees, list) or not all(isinstance(item, dict))
-    print("Erreur : Type invalide pour attendees. Attendu : une liste de dictionnaires.")
-    return
+    if not isinstance(attendees, list) or not all(isinstance(item, dict) for item in attendees):
+        print("Error: Invalid type for attendees. Expected: a list of dictionaries.")
+        return
 
     if not template.strip():
-        print("Template is empty, output files generated.")
+        print("Template is empty, no output files generated.")
         return
     
     if not attendees:
@@ -19,7 +19,6 @@ def generate_invitations(template, attendees);
     
     for index, attendee in enumerate(attendees, start=1):
         processed_content = template
-
         placeholders = ["name", "event_title", "event_date", "event_location"]
 
         for key in placeholders:
@@ -35,4 +34,4 @@ def generate_invitations(template, attendees);
             with open(filename, 'w', encoding='utf-8') as f:
                 f.write(processed_content)
         except Exception as e:
-            print(f"Une erreur est survenue lors de l'écriture de {filename} : {e}")
+            print(f"An error occurred while writing to {filename}: {e}")
