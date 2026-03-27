@@ -1,4 +1,4 @@
-const clickableItem = document.querySelector('#read_header');
+const clickableItem = document.querySelector('#red_header');
 
 clickableItem.addEventListener('click', function() {
     const header = document.querySelector('header');
