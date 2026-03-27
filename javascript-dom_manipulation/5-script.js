@@ -1,7 +1,8 @@
 const updateBtn = document.querySelector('#update_header');
-const header = document.querySelector('header');
+const headerTitle = document.querySelector('header h1'); 
 
-updateBtn.addEventListener('click', () =>
-{
-    header.textContent = 'New Header!!!';
-});
+if (updateBtn && headerTitle) {
+    updateBtn.addEventListener('click', () => {
+        headerTitle.textContent = 'New Header!!!';
+    });
+}
